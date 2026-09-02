@@ -25,12 +25,12 @@ outdir=$basedir/BIDS/derivatives/bold/GLM1/Sess$ses
 indir=$basedir/BIDS/derivatives/fmriprep
 mkdir -p $outdir
 mkdir -p $outdir/sub-$subjid
-mkdir -p $outdir/sub-$subjid/category
+mkdir -p $outdir/sub-$subjid/Category
 
-fulloutdir=$outdir/sub-$subjid/category
+fulloutdir=$outdir/sub-$subjid/Category
 fullindir=$indir/sub-$subjid/ses-$ses/func
 fullrawdir=$basedir/sub-$subjid/ses-$ses/func
-1dfile=$basedir/BIDS/derivatives/fmriprep/GLM1dFiles/Categories1D
+1dfile=$basedir/BIDS/derivatives/fmriprep/GLM1dFiles/Categories1D/sess-$ses
 
 mkdir -p $fulloutdir
 
@@ -76,20 +76,21 @@ $fullindir/sub-${subjid}_ses-${ses}_task-STORY_run-07_space-MNI152NLin6Asym_res-
 -num_stimts 14 \
 -jobs $SLURM_CPUS_PER_TASK \
 -local_times \
--stim_times 1 /mnt/cognosdata/EEG_MRI/BIDS/derivatives/fmriprep/GLM1dFiles/Categories1D/${subjid}_Category${categoryid}_Alltrials.1d 'SPMG3' -stim_label 1 Category \
--stim_times 2 /mnt/cognosdata/EEG_MRI/BIDS/derivatives/fmriprep/GLM1dFiles/Categories1D/${subjid}_Category${categoryid}_Alltrials.1d 'SPMG3' -stim_label 1 Category \
--stim_times 3 /mnt/cognosdata/EEG_MRI/BIDS/derivatives/fmriprep/GLM1dFiles/Categories1D/${subjid}_Category${categoryid}_Alltrials.1d 'SPMG3' -stim_label 1 Category \
--stim_times 4 /mnt/cognosdata/EEG_MRI/BIDS/derivatives/fmriprep/GLM1dFiles/Categories1D/${subjid}_Category${categoryid}_Alltrials.1d 'SPMG3' -stim_label 1 Category \
--stim_times 5 /mnt/cognosdata/EEG_MRI/BIDS/derivatives/fmriprep/GLM1dFiles/Categories1D/${subjid}_Responses.1d 'SPMG3' -stim_label 3 Responses \
--stim_file 6 $fullindir/sub-${subjid}_ses-${ses}_task-STORY_run-01_desc-confounds_timeseries_sarvia.tsv'[9]' -stim_base 4 -stim_label 4 'WM' \
--stim_file 7 $fullindir/sub-${subjid}_ses-${ses}_task-STORY_run-01_desc-confounds_timeseries_sarvia.tsv'[5]' -stim_base 5 -stim_label 5 'CSF' \
--stim_file 8 $fullindir/sub-${subjid}_ses-${ses}_task-STORY_run-01_desc-confounds_timeseries_sarvia.tsv'[17]' -stim_base 6 -stim_label 6 'FD' \
--stim_file 9 $fullindir/sub-${subjid}_ses-${ses}_task-STORY_run-01_desc-confounds_timeseries_sarvia.tsv'[18]' -stim_base 7 -stim_label 7 'dx' \
--stim_file 10 $fullindir/sub-${subjid}_ses-${ses}_task-STORY_run-01_desc-confounds_timeseries_sarvia.tsv'[19]' -stim_base 8 -stim_label 8 'dy' \
--stim_file 11 $fullindir/sub-${subjid}_ses-${ses}_task-STORY_run-01_desc-confounds_timeseries_sarvia.tsv'[20]' -stim_base 9 -stim_label 9 'dz' \
--stim_file 12 $fullindir/sub-${subjid}_ses-${ses}_task-STORY_run-01_desc-confounds_timeseries_sarvia.tsv'[21]' -stim_base 10 -stim_label 10 'rotx' \
--stim_file 13 $fullindir/sub-${subjid}_ses-${ses}_task-STORY_run-01_desc-confounds_timeseries_sarvia.tsv'[22]' -stim_base 11 -stim_label 11 'roty' \
--stim_file 14 $fullindir/sub-${subjid}_ses-${ses}_task-STORY_run-01_desc-confounds_timeseries_sarvia.tsv'[23]' -stim_base 12 -stim_label 12 'rotz' \
+-stim_times 1 /mnt/cognosdata/EEG_MRI/BIDS/derivatives/fmriprep/GLM1dFiles/Categories1D/sess-${ses}/${subjid}_Animal_Alltrials.1d 'SPMG3' -stim_label 1 Animal \
+-stim_times 2 /mnt/cognosdata/EEG_MRI/BIDS/derivatives/fmriprep/GLM1dFiles/Categories1D/sess-${ses}/${subjid}_Faces_Alltrials.1d 'SPMG3' -stim_label 2 Face \
+-stim_times 3 /mnt/cognosdata/EEG_MRI/BIDS/derivatives/fmriprep/GLM1dFiles/Categories1D/sess-${ses}/${subjid}_FOOD_Alltrials.1d 'SPMG3' -stim_label 3 Food \
+-stim_times 4 /mnt/cognosdata/EEG_MRI/BIDS/derivatives/fmriprep/GLM1dFiles/Categories1D/sess-${ses}/${subjid}_TOOL_Alltrials.1d 'SPMG3' -stim_label 4 Tool \
+-stim_times 5 /mnt/cognosdata/EEG_MRI/BIDS/derivatives/fmriprep/GLM1dFiles/Categories1D/${subjid}_Responses.1d 'SPMG3' -stim_label 5 Responses \
+##### fix this 
+-stim_file 6 $fullindir/sub-${subjid}_ses-${ses}_task-STORY_run-01_desc-confounds_timeseries_sarvia.tsv'[9]' -stim_base 6 -stim_label 6 'WM' \
+-stim_file 7 $fullindir/sub-${subjid}_ses-${ses}_task-STORY_run-01_desc-confounds_timeseries_sarvia.tsv'[5]' -stim_base 7 -stim_label 7 'CSF' \
+-stim_file 8 $fullindir/sub-${subjid}_ses-${ses}_task-STORY_run-01_desc-confounds_timeseries_sarvia.tsv'[17]' -stim_base 8 -stim_label 8 'FD' \
+-stim_file 9 $fullindir/sub-${subjid}_ses-${ses}_task-STORY_run-01_desc-confounds_timeseries_sarvia.tsv'[18]' -stim_base 9 -stim_label 9 'dx' \
+-stim_file 10 $fullindir/sub-${subjid}_ses-${ses}_task-STORY_run-01_desc-confounds_timeseries_sarvia.tsv'[19]' -stim_base 10 -stim_label 10 'dy' \
+-stim_file 11 $fullindir/sub-${subjid}_ses-${ses}_task-STORY_run-01_desc-confounds_timeseries_sarvia.tsv'[20]' -stim_base 11 -stim_label 11 'dz' \
+-stim_file 12 $fullindir/sub-${subjid}_ses-${ses}_task-STORY_run-01_desc-confounds_timeseries_sarvia.tsv'[21]' -stim_base 12 -stim_label 12 'rotx' \
+-stim_file 13 $fullindir/sub-${subjid}_ses-${ses}_task-STORY_run-01_desc-confounds_timeseries_sarvia.tsv'[22]' -stim_base 13 -stim_label 13 'roty' \
+-stim_file 14 $fullindir/sub-${subjid}_ses-${ses}_task-STORY_run-01_desc-confounds_timeseries_sarvia.tsv'[23]' -stim_base 14 -stim_label 14 'rotz' \
 -gltsym 'SYM: +Category' -glt_label 1 Category \
 -gltsym 'SYM: +Category' -glt_label 1 Category \
 -gltsym 'SYM: +Category' -glt_label 1 Category \
